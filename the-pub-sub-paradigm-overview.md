@@ -4,7 +4,7 @@ description: Introduction to the Topic / Sub paradigm used by Sunset.
 
 # The Pub / Sub Paradigm - Overview
 
-In other systems such as [WPILib command-based](https://docs.wpilib.org/en/stable/docs/software/commandbased/index.html) programming the implementor usually creates individual subsystem classes to represent their robot.  One might have a drivetrain subsystem, an elevator mechanism, vision, etc.  This works well for smaller, more controlled environments where design goals and constraints are very well known.  This model unfortunately begins to fall apart once you need to perform lots of communication between subsystems or new sensor information need to be shared among subsystems.
+In other systems such as [WPILib command-based](https://docs.wpilib.org/en/stable/docs/software/commandbased/index.html) programming the implementor usually creates individual subsystem classes to represent their robot.  One might have a drivetrain subsystem, an elevator mechanism, vision, etc.  This works well for smaller, more controlled environments where design goals and constraints are very well known.  This model unfortunately begins to fall apart once you need to perform lots of communication between subsystems or integrate new APIs quickly.
 
 The Topic / Subscriber (or pub / sub) system works a little differently.  The Pub/Sub paradigm defines Topics (similar to smaller, less complete subsystems) that can do nothing but send and receive messages each time their periodic method is called.  In Sunset these messages will take the form of python dictionaries. &#x20;
 
