@@ -38,7 +38,7 @@ By encapsulating each motor controller’s outputs into distinct topics, we main
 
 
 
-<figure><img src=".gitbook/assets/Screenshot 2024-02-07 at 1.39.47 AM.png" alt=""><figcaption><p>In this image we can clearly see the MotorVelocity topic from above as the end leaf of this tree.  </p></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2024-02-07 at 3.32.08 AM.png" alt=""><figcaption><p>In this image we can clearly see the MotorVelocity topic from above as the end leaf of this tree.  </p></figcaption></figure>
 
 {% hint style="info" %}
 Sunset is automatically able to determine that this node should have its execute method run first, then system time, then robot velocity, and finally once all the prerequisite data has been acquired, then can we compute the odometry update for this loop.  &#x20;
