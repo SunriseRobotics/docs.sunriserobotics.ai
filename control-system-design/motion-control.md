@@ -30,9 +30,13 @@ timer = timer()
 while True:
     state = profile.get(timer.seconds())
     # unpack state variables 
-    position, velocity = state.x, state.v 
-    # use a control loop to follow the reference
-    u = pid(position, velocity)
+    position, velocity, accel = state.x, state.v, state.a 
+    # stack position and velocity control! 
+    u = pid(
+        position, velocity
+    ) + feedforward(
+        velocity, acceleration
+    )
 
 
 ```
