@@ -14,7 +14,7 @@ Video of mecanum mobile robot running sunset.  Left shows visualization of odome
 
 
 
-<figure><img src=".gitbook/assets/Mecanum Drive Diagram Sunset.png" alt=""><figcaption><p>Block Diagram of the above robot featuring roboclaw motor controllers,  raspberry pi 4,  and Gobilda yellow jacket motors </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Mecanum Drive Diagram Sunset.png" alt=""><figcaption><p>Block Diagram of the above robot featuring roboclaw motor controllers,  raspberry pi 4,  and Gobilda yellow jacket motors </p></figcaption></figure>
 
 Our mecanum-wheeled robot is uniquely designed with four independently controlled mecanum wheels allowing for omni-directional motion. The system architecture employs a distributed approach where each motor controller operates as an individual node within the robot’s communication network. The publish-subscribe (pub-sub) model is integral to this setup, enabling efficient data transfer regarding wheel velocities and other sensor data from the nodes to the central processing unit, a Raspberry Pi 4.
 
@@ -38,7 +38,7 @@ By encapsulating each motor controller’s outputs into distinct topics, we main
 
 
 
-<figure><img src=".gitbook/assets/Screenshot 2024-02-07 at 3.32.08 AM.png" alt=""><figcaption><p>In this image we can clearly see the MotorVelocity topic from above as the end leaf of this tree.  </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-02-07 at 3.32.08 AM.png" alt=""><figcaption><p>In this image we can clearly see the MotorVelocity topic from above as the end leaf of this tree.  </p></figcaption></figure>
 
 {% hint style="info" %}
 Sunset is automatically able to determine that this node should have its execute method run first, then system time, then robot velocity, and finally once all the prerequisite data has been acquired, then can we compute the odometry update for this loop.  &#x20;

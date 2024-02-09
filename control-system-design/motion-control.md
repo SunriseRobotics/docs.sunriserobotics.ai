@@ -10,7 +10,7 @@ Motion profiling is a crucial concept in control systems, particularly when it c
 
 One of the key advantages of our implementation is the ability to perform _asymmetric motion profiling_. This means we can define different profiles for acceleration and deceleration phases to better match the physical characteristics and constraints of specific systems. By doing so, we achieve more refined control, efficient energy usage, and can cater to systems that require non-uniform acceleration curves.
 
-<figure><img src=".gitbook/assets/motionProfileExample.png" alt=""><figcaption><p>Example of a motion profiled trajectory.  Notice the trapezoid shape of the velocity. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/motionProfileExample.png" alt=""><figcaption><p>Example of a motion profiled trajectory.  Notice the trapezoid shape of the velocity. </p></figcaption></figure>
 
 ## Using the Motion Profile
 
