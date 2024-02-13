@@ -2,7 +2,7 @@
 description: Here we show how Sunset has been integrated onto physical hardware.
 ---
 
-# Pub Sub Example - Mecanum Robot
+# Pub Sub Example
 
 For this section you might find it helpful to follow along with the code [here](https://github.com/SunriseRobotics/sunset-robotics-framework/blob/b0035926074fbf63880b998595b22a65321b9ce4/example/mecanum\_roboclaw\_example.py).&#x20;
 
@@ -14,9 +14,9 @@ Video of mecanum mobile robot running sunset.  Left shows visualization of odome
 
 
 
-<figure><img src="../.gitbook/assets/Mecanum Drive Diagram Sunset.png" alt=""><figcaption><p>Block Diagram of the above robot featuring roboclaw motor controllers,  raspberry pi 4,  and Gobilda yellow jacket motors </p></figcaption></figure>
+<figure><img src=".gitbook/assets/Mecanum Drive Diagram Sunset.png" alt=""><figcaption><p>Block Diagram of the above robot featuring roboclaw motor controllers,  raspberry pi 4,  and Gobilda yellow jacket motors </p></figcaption></figure>
 
-Our mecanum-wheeled robot is uniquely designed with four independently controlled mecanum wheels allowing for omni-directional motion. The system architecture employs a distributed approach where each motor controller operates as an individual node within the robot’s communication network. The publish-subscribe (pub-sub) model is integral to this setup, enabling efficient data transfer regarding wheel velocities and other sensor data from the nodes to the central processing unit, a Raspberry Pi 4.
+Our robot is  designed with four independently controlled mecanum wheels allowing for omni-directional motion. The system architecture employs a distributed approach where each motor controller operates as an individual node within the robot’s communication network. The topic / subscriber is integral to this setup, enabling systematic structure regarding how data flows through the system and how this is used to build high level behaviors.
 
 In our network graph, these motor controllers are visualized as the "leaf" nodes, signifying their role as data endpoints in the larger robotic system. Each topic in the pub-sub system is treated as a discrete unit of computation, seamlessly passing messages and sensor readings along the chain of topics. This structure ensures that data flows logically from one topic to the next, mirroring the actual data pathways within the robot’s operational framework.
 
@@ -38,7 +38,7 @@ By encapsulating each motor controller’s outputs into distinct topics, we main
 
 
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-02-07 at 3.32.08 AM.png" alt=""><figcaption><p>In this image we can clearly see the MotorVelocity topic from above as the end leaf of this tree.  </p></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2024-02-07 at 3.32.08 AM.png" alt=""><figcaption><p>In this image we can clearly see the MotorVelocity topic from above as the end leaf of this tree.  </p></figcaption></figure>
 
 {% hint style="info" %}
 Sunset is automatically able to determine that this node should have its execute method run first, then system time, then robot velocity, and finally once all the prerequisite data has been acquired, then can we compute the odometry update for this loop.  &#x20;
@@ -189,7 +189,7 @@ Notice how this topic relies on no other information other than what is passed i
 {% endhint %}
 
 {% hint style="danger" %}
-If you want simulation to work you must only use the SystemTime topic that is instantiated within the scheduler.  See [here](pub-sub-example-mecanum-robot.md) for more information.  We can see the system time topic's messages being used for `dt` in the above example. &#x20;
+If you want simulation to work you must only use the SystemTime topic that is instantiated within the scheduler.  See [here](pub-sub-example.md) for more information.  We can see the system time topic's messages being used for `dt` in the above example. &#x20;
 {% endhint %}
 
 {% hint style="warning" %}
